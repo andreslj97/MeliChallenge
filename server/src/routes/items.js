@@ -4,7 +4,7 @@ const server = express.Router()
 const { cacheInit } = require('../middleware/cache')
 
 server.get(
-    '/',
+    '/api/items',
     cacheInit
 )
 
@@ -34,6 +34,10 @@ server.get('/api/items',(req, res) => {
     })
 })
 
+server.get(
+    '/api/items/:idProduct',
+    cacheInit
+)
 
 server.get('/api/items/:idProduct',(req, res) => {
     const idProduct = req.params.idProduct;
