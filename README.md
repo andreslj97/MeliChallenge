@@ -2,19 +2,7 @@
   <a href="https://github.com/andreslj97/MeliChallenge">
     <img src="https://http2.mlstatic.com/frontend-assets/ml-web-navigation/ui-navigation/5.19.5/mercadolibre/logo__large_plus.png" alt="Logo" width="134" height="34">
   </a>
-
-  <h3 align="center">README</h3>
-
-  <p align="center">
-    Meli Challenge FrontEnd developer
-    <br />
-    <br />
-    <a href="https://github.com/andreslj97/MeliChallenge">View Demo</a>
-    ·
-    <a href="https://github.com/andreslj97/MeliChallenge/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/andreslj97/MeliChallenge/issues">Request Feature</a>
-  </p>
+  <h3 align="center">README.md</h3>
   <h2>Search Mercado Libre</h2>
 </div>
 
@@ -44,8 +32,25 @@ To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
+##### `Node  >= 12.0.0`
+##### `React`
+
+### Install
+
+* Server folder (/) localhost port 3001
+
   ```sh
-  npm install npm@latest -g
+  npm install
+  ```
+    ```sh
+  npm start
+  ```
+  
+* Client folder (/client) localhost port 3000
+
+  ```sh
+  npm install
+  ```
+    ```sh
+  npm start
   ```
