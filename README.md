@@ -9,38 +9,40 @@
     Meli Challenge FrontEnd developer
     <br />
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
+    <a href="https://github.com/andreslj97/MeliChallenge">View Demo</a>
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Report Bug</a>
+    <a href="https://github.com/andreslj97/MeliChallenge/issues">Report Bug</a>
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Request Feature</a>
+    <a href="https://github.com/andreslj97/MeliChallenge/issues">Request Feature</a>
   </p>
 </div>
+<div align="left">
+  <h1>Search Mercado Libre</h1>
+  <h3>MeliChallenge</h3>
 
-<h1>Search Mercado Libre</h1>
-<h3>MeliChallenge</h3>
+  <span>
+    This repository content a proyect of challenge based create app of search fo products, list of products and products details, focus on api's Mercado Libre.  🛒🏪👨‍💻
+    The technologies used in the proyect is nodejs and reactjs.👾🤖🎯
+    `ReactJs`
+    `NodeJs`
+  </span>
+  <h2>Components</h2>
+  <br />
+  `SearchBar`
+  `SearchResult`
+  `ProductDetail`
 
-<span>
-This repository content a proyect of challenge based create app of search fo products, list of products and products details, focus on api's Mercado Libre.  🛒🏪👨‍💻
+  <!-- GETTING STARTED -->
+  ## Getting Started
 
-The technologies used in the proyect is nodejs and reactjs.👾🤖🎯
+  This is an example of how you may give instructions on setting up your project locally.
+  To get a local copy up and running follow these simple example steps.
 
-`ReactJs`
-`NodeJs`
+  ### Prerequisites
 
-</span>
-<h2>Components</h2>
-
-<!-- GETTING STARTED -->
-## Getting Started
-
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
-
-### Prerequisites
-
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
+  This is an example of how to list things you need to use the software and how to install them.
+  * npm
+    ```sh
+    npm install npm@latest -g
+    ```
+</div>
