@@ -1,27 +1,35 @@
+require('dotenv').config()
 const fetch = require('node-fetch');
 const express = require('express')
 const server = express.Router()
 const { cacheInit } = require('../middleware/cache')
+const { getProductMeli,getProductDescMeli } = require('../providers/meli');
 
-server.get(
-    '/api/items',
-    cacheInit
-)
+//Function for save cache according to route
+const setCache = (config={routes:[]})=>{
+    config.routes.map(route => {
+        server.get(
+            route,
+            cacheInit
+        )
+    })
+}
 
+//Set routes for save cache memory 
+setCache({routes:['/api/items','/api/items/:idProduct']})
+
+//Route for get all products according to search param
 server.get('/api/items',(req, res) => {
     const product = req.query.q;
-    fetch(`https://api.mercadolibre.com/sites/MLA/search?q=${product}`,{method: 'GET', redirect: 'follow'})
+    fetch(`${process.env.URLMELI}/sites/MLA/search?q=${product}`,{method: 'GET', redirect: 'follow'})
     .then(response => response.json())
     .then((product) =>{
         const results = product.results
         if(results.length > 0){
             let categories = results.map((item)=>{return item.category_id}); 
             const responseData = {
-                "author":{
-                    "name": "Andres",
-                    "lastname": "Lugo"
-                },
-                "categories": categories,
+                "author": JSON.parse(process.env.AUTOR),
+                categories,
                 "items": results
             }
             res.status(200).send(responseData);
@@ -30,15 +38,12 @@ server.get('/api/items',(req, res) => {
         }
     })
     .catch( err => {
-        console.log('error', err)
+        res.status(404).send(err);
     })
 })
 
-server.get(
-    '/api/items/:idProduct',
-    cacheInit
-)
 
+//Route for get product
 server.get('/api/items/:idProduct',(req, res) => {
     const idProduct = req.params.idProduct;
     Promise.all([
@@ -49,10 +54,7 @@ server.get('/api/items/:idProduct',(req, res) => {
         let descriptionProduct = response[1]
         const {id,title,currency_id,price,condition,sold_quantity,shipping,pictures} = dataProduct
         const responseData = {
-            "author":{
-                "name": "Andres",
-                "lastname": "Lugo"
-            },
+            "author": JSON.parse(process.env.AUTOR),
             "item": {
                 "id":id,
                 "tittle":title,
@@ -70,23 +72,13 @@ server.get('/api/items/:idProduct',(req, res) => {
         }
         res.status(200).send(responseData);
     }).catch(err=>{
-        console.log('error', err)
+        res.status(404).send(err);
     })
     
 })
 
-server.getProduct = (idProduct) => {
-    return fetch(`https://api.mercadolibre.com/items/${idProduct}`,{method: 'GET', redirect: 'follow'})
-    .then(response => response.json())
-    .then(data =>{return data})
-    .catch( err => {console.log('error', err)})
-}
-
-server.getProductDesc = (idProduct) => {
-    return fetch(`https://api.mercadolibre.com/items/${idProduct}/description`,{method: 'GET', redirect: 'follow'})
-    .then(response => response.json())
-    .then(data =>{return data})
-    .catch( err => {console.log('error', err)})
-}
+//Intance services providers
+server.getProduct = (idProduct)=>getProductMeli(idProduct)
+server.getProductDesc = (idProduct)=>getProductDescMeli(idProduct)
 
 module.exports = server
