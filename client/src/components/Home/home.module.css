@@ -1,0 +1,25 @@
+.title{
+    text-align: center;
+    margin: 0 auto;
+    font-weight: bold;
+    font-size: 3rem;
+    display: block;
+}
+
+.subtitle{
+    text-align: left;
+    margin: 0 auto;
+    font-weight: bold;
+    font-size: 2rem;
+    display: block;
+    width: 90%;
+}
+
+p{
+    text-align: left;
+    margin: 0 auto;
+    font-weight: bold;
+    font-size: 1rem;
+    display: block;
+    width: 80%;
+}

@@ -46,27 +46,34 @@ server.get('/api/items',(req, res) => {
 //Route for get product
 server.get('/api/items/:idProduct',(req, res) => {
     const idProduct = req.params.idProduct;
+    
+    const getAttribute = (attributes,name)=>{
+        //return 'gola'
+        const valuesAttr = attributes.filter((objAttr)=>{
+            return objAttr.id == name
+        }).map((item)=>{return item.value_name})
+        if(valuesAttr.length > 0){
+            return valuesAttr[0]
+        }
+    }
+    
     Promise.all([
         server.getProduct(idProduct),
         server.getProductDesc(idProduct)
     ]).then((response)=>{
         let dataProduct = response[0]
         let descriptionProduct = response[1]
-        const {id,title,currency_id,price,condition,sold_quantity,shipping,pictures} = dataProduct
+        const {id,title,currency_id,price,sold_quantity,shipping,pictures,attributes} = dataProduct
         const responseData = {
             "author": JSON.parse(process.env.AUTOR),
             "item": {
                 "id":id,
                 "tittle":title,
-                "price":{
-                    "currency":currency_id,
-                    "amount":price,
-                    "decimals":price
-                },
+                "price":price,
                 "picture":pictures,
-                "condition":condition,
                 "free_shipping":shipping,
                 "sold_quantity":sold_quantity,
+                "condition": getAttribute(attributes,'ITEM_CONDITION'),
                 "description":descriptionProduct.plain_text
             }
         }

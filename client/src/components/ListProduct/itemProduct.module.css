@@ -1,0 +1,45 @@
+.itemProduct{
+    display: flex;
+}
+
+.itemProduct >img{
+    min-width: 20rem;
+    width: 30%;
+    max-height: 30rem;
+    margin-inline-end: 2rem;
+}
+
+.descProd{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin-top:5rem
+}
+
+.descProd span{
+    white-space: pre-line;
+    font-family: sans-serif;
+}
+
+.price{
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.title{
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    font-weight: 100;
+}
+
+.ubication{
+    margin-top:6rem;
+    font-size: 1.2rem;
+    font-weight: 100;
+    font-family: sans-serif;
+}
+
+a{
+    text-decoration: none;
+    color: #000
+}

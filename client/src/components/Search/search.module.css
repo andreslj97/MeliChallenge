@@ -1,0 +1,16 @@
+.search{
+    width:100%;
+    min-height:100vh;
+    background:#ededed
+}
+
+.searchWrapper{
+    width: 80%;
+    margin: 0 auto 0 auto;
+    padding: 5rem 3rem 2rem 3rem;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+

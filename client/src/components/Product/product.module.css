@@ -1,0 +1,76 @@
+.productWrapper{
+    background: white;
+    width:80%;
+    margin: 0 auto;
+    padding:2rem
+}
+
+.background{
+    background:#ededed
+}
+
+.principal{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.principal .wrapperImage{
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    justify-content: center;
+}
+
+.buy{
+    display: flex;
+    flex-direction: column;
+    max-width:20%
+}
+
+.title{
+    font-family: sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-block:1rem
+}
+
+.price{
+    font-family: sans-serif;
+    font-weight: 500;
+    font-size: 3rem
+}
+
+.buyBtn{
+    border:none;
+    background: rgb(115 178 255);
+    color:white;
+    font-size: 1rem;
+    padding: 1rem;
+    font-weight: normal;
+    width: 90%;
+    margin: 2rem auto;
+    cursor:pointer;
+}
+
+.buyBtn:hover{
+    background: rgb(52, 142, 251);
+    box-shadow: 0 0 5px #000;
+}
+
+.description{
+    display: flex;
+    flex-direction: column;
+}
+
+.desTitle{
+    color: #666666;
+    font-family: sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.descriptionDetail{
+    color: #666666;
+    font-family: sans-serif;
+}

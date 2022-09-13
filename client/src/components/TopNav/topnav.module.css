@@ -1,0 +1,68 @@
+.navLogo {
+    background-image: url('../../../public/images/logo__large_plus.png');
+    height: 34px;
+    top: 11px;
+    width: 134px;
+    background-repeat: no-repeat;
+    display: inline-block;
+    overflow: hidden;
+    position: absolute;
+    left: 10px;
+}
+
+.navHeader{
+    display: block;
+    height: 70px;
+    background-color: #fff159;
+    border: 0;
+    position: relative;
+    font-size: 13px;
+    font-weight: 400;
+    font-family: -apple-system,Roboto,Arial,sans-serif;
+}
+
+.navWrapper{
+    display: flex;
+    height: auto;
+    max-width: 1200px;
+    position: relative;
+    margin: 0 auto;
+    font-size: 13px;
+    font-weight: 400;
+    justify-content: center;
+}
+
+.searchInput{
+    top: 11px;
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 20%);
+    height: 39px;
+    padding: 7px 60px 9px 15px;
+    border-radius: 2px;
+    background-color: #fff;
+    border: none;
+    position: relative;
+    box-sizing: border-box;
+    color: #333;
+    font-size: 16px;
+    width: 100%;
+    margin: 0;
+    font-family: inherit;
+    left: 35px;
+    max-width: 600px;
+    right: 94px;
+}
+
+.navBtnSearch{
+    left: auto;
+    height: 39px;
+    width: 46px;
+    padding-top: 2px;
+    cursor: pointer;
+    border-radius: 0 2px 2px 0;
+    top: 11px;
+    right: 12px;
+    border: none;
+    font-size: 22px;
+    color: #666;
+    position: relative;
+}

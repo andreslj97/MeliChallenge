@@ -1,23 +1,30 @@
-import React from "react";
-import logo from "./logo.svg";
+import React,{ useEffect,useState } from "react";
 import "./App.css";
+import { BrowserRouter, Routes , Route } from "react-router-dom"
+import { Home, NotFound, Product, TopNav, Search } from './components'
+import { ApiProvider } from './components/ApiProvider/ApiProvider'
 
 function App() {
-  const [data, setData] = React.useState(null);
+  
+  const [queryParams, setQueryParams] = useState('')
+  const [idProduct, setIdProduct] = useState('')
 
-  React.useEffect(() => {
-    fetch("/api/items")
-      .then((res) => res.json())
-      .then((data) => setData(data.message));
-  }, []);
+  useEffect(() => {
+    document.title = 'Mercado Libre Colombia';
+  });
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>{!data ? "Loading..." : data}</p>
-      </header>
-    </div>
+      <BrowserRouter>
+      <ApiProvider>
+        <TopNav setQueryParams={setQueryParams}/>
+        <Routes>
+          <Route path="/" element={<Home/>}/>
+          <Route path="/items" element={<Search queryParams={queryParams} setIdProduct={setIdProduct}/>}/>
+          <Route path="/api/items/:id" element={<Product/>}/>
+          <Route path="*" element={<NotFound/>}/>
+        </Routes>
+        </ApiProvider>
+      </BrowserRouter>
   );
 }
 
