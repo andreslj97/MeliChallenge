@@ -37,7 +37,7 @@ const TopNav = ({setQueryParams}) => {
     }
 
     useEffect(() => {
-        window.location.pathname == '/items' && (setRedirec(false))
+        window.location.pathname == '/items' ? setRedirec(false) : setRedirec(true)
         if(query.length > 0) {
             setQueryParams(query)
         }

@@ -66,3 +66,16 @@
     color: #666;
     position: relative;
 }
+
+@media (max-width: 768px){
+    .searchInput{
+        padding: 7px 0px 9px 15px;
+        max-width: 210px;
+    }    
+    .navWrapper{
+        justify-content: right;
+    }
+    .navLogo {
+        z-index: 1;
+    }
+}

@@ -74,3 +74,23 @@
     color: #666666;
     font-family: sans-serif;
 }
+
+@media (max-width: 768px){
+    .principal{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    .principal .wrapperImage{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .buy{
+        display: flex;
+        flex-direction: column;
+        max-width:100%
+    }
+}

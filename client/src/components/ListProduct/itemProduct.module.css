@@ -43,3 +43,22 @@ a{
     text-decoration: none;
     color: #000
 }
+
+@media (max-width: 768px){
+    .itemProduct{
+        flex-direction: column;
+    }
+    .itemProduct >img{
+        min-width: auto;
+        width: 100%;
+    }
+    .descProd{
+        width: 100%;
+        margin-top:2rem
+    }
+    .ubication{
+        margin-top:1rem;
+        margin-bottom: 4rem;
+        border-bottom: 1px solid #000;
+    }
+}
