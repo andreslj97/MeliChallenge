@@ -9,8 +9,6 @@ const Product = () => {
     const { id } = useParams();
     const context = useContext(ApiContext)
 
-    console.log('GET PRODUCT',context)
-
     useEffect(() => {
         (async ()=>{
             let dataProducts = await context.getProduct(id);
@@ -38,8 +36,6 @@ const Product = () => {
                         <span className={styles.desTitle}>Descripción del producto</span>
                         <p className={styles.descriptionDetail}>{`${data.description}`}</p>
                     </div>
-                    {/* <h1>PRODUCT ID {id} {`${data.picture[0].secure_url}`}</h1>
-                    {console.log('DATA',data)} */}
                 </div>
             : null}
         </div>

@@ -1,8 +1,7 @@
-import { useState, useRef, useContext, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import styles from './topnav.module.css'
-import { Redirect, Link, useSearchParams, createSearchParams, useNavigate } from "react-router-dom"
+import { Link, useSearchParams, useNavigate } from "react-router-dom"
 import { FaSearch } from "react-icons/fa";
-import { ApiContext } from '../ApiProvider/ApiProvider';
 
 const TopNav = ({setQueryParams}) => {
     const [searchParams, setSearchParams] = useSearchParams();
@@ -27,7 +26,6 @@ const TopNav = ({setQueryParams}) => {
 
     const onQueryChange = (event) => {
         event.preventDefault();
-        console.log('EVENT',redirectPageSearch)
         const newQuery = event.target[0].value;
         if(redirectPageSearch){
             navigate('/items');

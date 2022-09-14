@@ -48,7 +48,6 @@ server.get('/api/items/:idProduct',(req, res) => {
     const idProduct = req.params.idProduct;
     
     const getAttribute = (attributes,name)=>{
-        //return 'gola'
         const valuesAttr = attributes.filter((objAttr)=>{
             return objAttr.id == name
         }).map((item)=>{return item.value_name})

@@ -10,7 +10,6 @@ export const ApiProvider = ({ children }) => {
         try {
             const productResult = await fetch(`http://localhost:3001/api/items/${idProduct}`)
             .then(response => response.json())
-            console.log('DATA PROVIDER',productResult)
             setStatus('done');
             setData(productResult.item)
             return productResult.item

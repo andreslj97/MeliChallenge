@@ -4,7 +4,6 @@ import { Link } from "react-router-dom"
 import formatPrice from '../../Utils/formatPrice';
 
 const ListProduct = ({productList}) => {
-    console.log('PRODUCTS',productList);
     return(
         <>
             {
