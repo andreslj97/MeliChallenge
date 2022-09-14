@@ -24,7 +24,7 @@ const Search = ({queryParams}) => {
     return(
         <div className={styles.search}>
             <div className={styles.searchWrapper}>
-                <h1>Búsqueda</h1>
+                <h1>Resultados de la búsqueda</h1>
                 {items.length > 0?
                     <ListProduct productList={items}/>
                     :

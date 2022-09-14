@@ -1,18 +1,10 @@
-import TopNav from '../TopNav'
-import { useState } from 'react';
-import { useSearchParams } from "react-router-dom"
+import { allImages } from "../../Utils/importAllImages";
 
 const NotFound = ()=>{
-
-    const [searchParams, setSearchParams] = useSearchParams();
-    const [query, setQuery] = useState(searchParams.get('search') || "");
-
-    const isPageSearch = false
-
     return(
         <>
-            <TopNav isPageSearch={isPageSearch} setSearchParams={setSearchParams} setQuery={setQuery} query={query}/>
-            <h1>NOT FOUND</h1>
+            {console.log('IMAGES',allImages)}
+            <img style={{margin:'0 auto',display:'block'}} src={allImages["img404.png"]} alt="404" />
         </>
     )
 }
