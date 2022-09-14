@@ -8,7 +8,7 @@ export const ApiProvider = ({ children }) => {
 
     const getProduct = async(idProduct) => {
         try {
-            const productResult = await fetch(`http://localhost:3001/api/items/${idProduct}`)
+            const productResult = await fetch(`${process.env.REACT_APP_SERVER_URL}/api/items/${idProduct}`)
             .then(response => response.json())
             setStatus('done');
             setData(productResult.item)
@@ -21,7 +21,7 @@ export const ApiProvider = ({ children }) => {
     const getAllProducts = async(query) =>{
         if(typeof(query) === 'string' && query.length > 0) {
             try {
-                const searchResult = await fetch(`http://localhost:3001/api/items?q=${query}`)
+                const searchResult = await fetch(`${process.env.REACT_APP_SERVER_URL}/api/items?q=${query}`)
                 .then(response => response.json())
                 setStatus('done');
                 setData(searchResult.items)
